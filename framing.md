@@ -13,15 +13,16 @@ Type is a single byte (u8)
     RESPONSE = 2:
         RqID(u16) BodyLen(u32) Body
 
-        // The stream IDs started by a response are included here so
-        // that a relaying / proxy layer can pair streams to clients.
-    
     STREAM_BEGIN = 3:
         StreamID(u16) RqId(u16)
 
         // All streams MUST send their STREAM_BEGIN before the
         // associated RESPONSE is sent
 
+        // The stream IDs started by a response are explicit in the
+        // framing layer so that a relay / proxy layer can pair
+        // streams to clients.
+    
     STREAM_MESSAGE = 4:
         StreamID(u16) BodyLen(u32) Body
     
