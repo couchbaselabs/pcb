@@ -59,4 +59,4 @@ client-request pairing for these, since
 they may not have responses and can't
 be cleaned out.
 
-
+### How should a proxy handle REQUEST_ERRONLY?
