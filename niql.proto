@@ -1,19 +1,19 @@
 message NiqlRequest {
-    enum REQUEST_TYPE {
+    enum RequestType {
         NIQL_EXEC = 1;
         NIQL_EXEC_AST = 2;
     }
-    required REQUEST_TYPE type = 1;
+    required RequestType type = 1;
     optional string statements = 2;
     optional string tx = 3;
 }
 
 message NiqlResponse {
-    enum RESPONSE_CODE {
+    enum ResponseCode {
        NIQL_OK = 0;
        NIQL_ERROR = 1;
     }
-    required RESPONSE_CODE code = 1;
+    required ResponseCode code = 1;
     optional bytes body = 2;
     optional bytes side = 3;
 }
